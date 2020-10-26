@@ -33,7 +33,7 @@ jobs:
       run: |
         curl https://cdn.shiftleft.io/download/sl > ${GITHUB_WORKSPACE}/sl && chmod a+rx ${GITHUB_WORKSPACE}/sl
     - name: Validate Build Rules
-      run: ${GITHUB_WORKSPACE}/sl check-analysis --app shiftleft-terraform-demo \
+      run: ${GITHUB_WORKSPACE}/sl check-analysis --verbose --app shiftleft-terraform-demo \
             --branch "${{ github.head_ref || steps.extract_branch.outputs.branch }}" \
             --report \
             --github-pr-number=${{github.event.number}} \
